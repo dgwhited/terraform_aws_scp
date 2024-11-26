@@ -7,6 +7,7 @@ resource "aws_organizations_policy" "ai_services_opt_out" {
   content     = <<CONTENT
   {
     "services": {
+        "@@operators_allowed_for_child_policies": ["@@none"],
         "default": {
             "@@operators_allowed_for_child_policies": ["@@none"],
             "opt_out_policy": {
